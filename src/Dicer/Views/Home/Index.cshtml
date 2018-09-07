@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Nicer Dicer";
+}
+
+<div ng-app="mainApp" ng-strict-di>
+
+    <div ng-controller="HomeController">
+        <div class="container">
+            <div id="table_space" class="container pull-left" style="max-width:300px;">
+
+                <button type="button" ng-click="addPerson()" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-plus">
+                    </i> Add person
+                </button>
+                <table id="persons" st-table="rowCollection" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in rowCollection">
+                            <td>{{row.name}}</td>
+                            <td>
+                                <button type="button" ng-click="removePerson(row)" class="btn btn-sm btn-danger">
+                                    <i class="glyphicon glyphicon-remove">
+                                    </i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+</div>
